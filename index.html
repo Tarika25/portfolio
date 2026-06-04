@@ -8,9 +8,11 @@
   <title>Tarika P | AI & Data Science Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="mouse-glow" id="mouseGlow"></div>
+  <canvas id="particles"></canvas>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -35,6 +37,8 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
     <div class="hero-content reveal">
       <div class="hero-image-wrapper">
         <div class="hero-image">
@@ -48,8 +52,15 @@
         <h2 class="hero-title">AI &amp; Data Science Student</h2>
         <p class="hero-subtitle"><span id="typed"></span></p>
         <p class="hero-intro">3rd year B.Tech AI & Data Science student at Sri Eshwar College of Engineering (2024–2028). Building intelligent solutions with Machine Learning, Generative AI, and Cloud technologies.</p>
+        <div class="hero-counters">
+          <div class="hc-item"><span class="hc-num" data-target="4">0</span><span class="hc-plus">+</span><p>Projects</p></div>
+          <div class="hc-divider"></div>
+          <div class="hc-item"><span class="hc-num" data-target="2">0</span><span class="hc-plus"></span><p>Internships</p></div>
+          <div class="hc-divider"></div>
+          <div class="hc-item"><span class="hc-num" data-target="5">0</span><span class="hc-plus">+</span><p>Certifications</p></div>
+        </div>
         <div class="hero-btns">
-          <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
+          <a href="tarika resumeee.pdf" download="Tarika_P_Resume.pdf" class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
           <a href="#projects" class="btn btn-outline"><i class="fas fa-code"></i> View Projects</a>
         </div>
         <div class="social-links">
@@ -72,7 +83,7 @@
             <img src="profile.jpeg" alt="Tarika P" />
           </div>
           <div class="about-stats">
-            <div class="stat"><span class="stat-num">5+</span><span>Projects</span></div>
+            <div class="stat"><span class="stat-num">4+</span><span>Projects</span></div>
             <div class="stat"><span class="stat-num">2</span><span>Internships</span></div>
             <div class="stat"><span class="stat-num">5+</span><span>Certifications</span></div>
           </div>
@@ -80,7 +91,7 @@
         <div class="about-text">
           <h3>3rd Year AI &amp; Data Science Student at Sri Eshwar College of Engineering</h3>
           <p>I'm a 3rd year B.Tech student (2024–2028) specializing in Artificial Intelligence and Data Science. My curiosity for how data can drive intelligent decisions has led me to explore the full data lifecycle — from raw ingestion to actionable insights.</p>
-          <p>With <strong>2 internships</strong> and <strong>5+ projects</strong> under my belt, I'm sharpening my skills in <strong>Data Engineering</strong>, <strong>Machine Learning</strong>, <strong>Generative AI</strong>, and <strong>Cloud Computing</strong>, while actively solving real-world problems.</p>
+          <p>With <strong>2 internships</strong> and <strong>4+ projects</strong> under my belt, I'm sharpening my skills in <strong>Data Engineering</strong>, <strong>Machine Learning</strong>, <strong>Generative AI</strong>, and <strong>Cloud Computing</strong>, while actively solving real-world problems.</p>
           <div class="interest-tags">
             <span><i class="fas fa-database"></i> Data Engineering</span>
             <span><i class="fas fa-brain"></i> Machine Learning</span>
@@ -97,8 +108,37 @@
   <section id="skills" class="section alt-bg">
     <div class="container">
       <h2 class="section-title reveal">My <span>Skills</span></h2>
-      <div class="skills-wrapper">
 
+      <!-- SKILL BARS -->
+      <div class="skill-bars-grid reveal">
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fab fa-python"></i><span>Python</span><span class="sb-pct">88%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fas fa-database"></i><span>SQL</span><span class="sb-pct">82%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fas fa-robot"></i><span>Machine Learning</span><span class="sb-pct">75%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fab fa-react"></i><span>React.js</span><span class="sb-pct">78%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="78"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fab fa-aws"></i><span>AWS / Cloud</span><span class="sb-pct">70%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-label"><i class="fas fa-microchip"></i><span>Generative AI</span><span class="sb-pct">72%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-width="72"></div></div>
+        </div>
+      </div>
+
+      <!-- SKILL TAGS -->
+      <div class="skills-wrapper" style="margin-top:48px">
         <div class="skill-category reveal">
           <h3><i class="fas fa-laptop-code"></i> Programming</h3>
           <div class="skill-cards">
@@ -108,7 +148,6 @@
             <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
           </div>
         </div>
-
         <div class="skill-category reveal">
           <h3><i class="fas fa-sitemap"></i> Data Engineering</h3>
           <div class="skill-cards">
@@ -118,7 +157,6 @@
             <div class="skill-card"><i class="fas fa-broom"></i><span>Data Cleaning</span></div>
           </div>
         </div>
-
         <div class="skill-category reveal">
           <h3><i class="fas fa-brain"></i> AI &amp; Analytics</h3>
           <div class="skill-cards">
@@ -128,7 +166,6 @@
             <div class="skill-card"><i class="fas fa-chart-line"></i><span>Looker Studio</span></div>
           </div>
         </div>
-
         <div class="skill-category reveal">
           <h3><i class="fas fa-cloud"></i> Cloud &amp; Tools</h3>
           <div class="skill-cards">
@@ -141,7 +178,6 @@
             <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
           </div>
         </div>
-
         <div class="skill-category reveal">
           <h3><i class="fas fa-layer-group"></i> MERN Stack</h3>
           <div class="skill-cards">
@@ -153,7 +189,6 @@
             <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -162,23 +197,60 @@
   <section id="education" class="section">
     <div class="container">
       <h2 class="section-title reveal">My <span>Education</span></h2>
-      <div class="timeline reveal">
-        <div class="timeline-item">
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card glass-card">
             <div class="tl-header">
               <div>
-                <h3>B.Tech – Artificial Intelligence and Data Science</h3>
+                <h3>B.Tech – Artificial Intelligence &amp; Data Science (AIDS)</h3>
                 <p class="institution"><i class="fas fa-university"></i> Sri Eshwar College of Engineering</p>
               </div>
-              <span class="tl-badge">2024 – 2028 • 3rd Year</span>
+              <span class="tl-badge">2024 – 2028</span>
             </div>
-            <p>Pursuing B.Tech in AI & Data Science with a focus on machine learning, data engineering, cloud computing, and intelligent systems design. Currently in 3rd year with 2 internships and 5+ projects completed.</p>
-            <div class="tl-tags">
+            <div class="edu-meta">
+              <span class="edu-stat"><i class="fas fa-star"></i> CGPA: 7.93 <small>(Upto 3rd Sem)</small></span>
+              <span class="edu-stat"><i class="fas fa-layer-group"></i> 3rd Year</span>
+            </div>
+            <div class="tl-tags" style="margin-top:12px">
               <span>Machine Learning</span><span>Data Engineering</span><span>Cloud Computing</span><span>AI Systems</span>
             </div>
           </div>
         </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Higher Secondary Certificate (HSC)</h3>
+                <p class="institution"><i class="fas fa-school"></i> KSR Akshara Academy Senior Secondary School</p>
+              </div>
+              <span class="tl-badge">2022 – 2024</span>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-stat"><i class="fas fa-percent"></i> 79.2%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Secondary School Leaving Certificate (SSLC)</h3>
+                <p class="institution"><i class="fas fa-school"></i> KSR Akshara Academy Senior Secondary School</p>
+              </div>
+              <span class="tl-badge">2021 – 2022</span>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-stat"><i class="fas fa-percent"></i> 69%</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -257,19 +329,51 @@
 
         <div class="project-card glass-card reveal">
           <div class="project-img">
-            <div class="project-img-placeholder pi-1">
-              <i class="fas fa-brain"></i>
-            </div>
-            <div class="project-overlay">
-              <span>View Details</span>
-            </div>
+            <div class="project-img-placeholder pi-1"><i class="fas fa-heartbeat"></i></div>
+            <div class="project-overlay"><span>View Details</span></div>
           </div>
           <div class="project-body">
+            <div class="project-meta"><span class="proj-domain">Full Stack Development</span><span class="proj-year">2026</span></div>
+            <h3>MedLync – Smart Prescription Platform</h3>
+            <p>A full-stack digital prescription platform connecting doctors, patients, and pharmacies to eliminate medication errors. Features drug interaction alerts, pharmacy inventory tracking, generic substitution, family medication calendar, and secure audit trail.</p>
+            <p class="proj-role"><i class="fas fa-user-cog"></i> Developer &nbsp;&bull;&nbsp; Team of 4</p>
+            <div class="project-tech"><span>Full Stack</span><span>React.js</span><span>Node.js</span><span>MongoDB</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder pi-2"><i class="fas fa-lightbulb"></i></div>
+            <div class="project-overlay"><span>View Details</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span class="proj-domain">Entrepreneurship</span><span class="proj-year">2025</span></div>
+            <h3>First Generation Entrepreneurs</h3>
+            <p>A startup support application for first-generation entrepreneurs providing mentorship access, financial literacy resources, and practical business tools. Step-by-step guidance for business setup, growth strategies, and funding opportunities.</p>
+            <p class="proj-role"><i class="fas fa-user-cog"></i> Technical Lead</p>
+            <div class="project-tech"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder pi-3"><i class="fas fa-brain"></i></div>
+            <div class="project-overlay"><span>View Details</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span class="proj-domain">Data Analytics</span><span class="proj-year">2025</span></div>
             <h3>Mental Health Analysis System</h3>
-            <p>A data-driven system that analyses mental health trends using survey data, providing insights through interactive dashboards.</p>
-            <div class="project-tech">
-              <span>Python</span><span>SQL</span><span>Power BI</span>
-            </div>
+            <p>A data-driven system that analyses mental health trends using survey data, providing insights through interactive Power BI dashboards and SQL-backed analytics.</p>
+            <p class="proj-role"><i class="fas fa-user-cog"></i> Developer</p>
+            <div class="project-tech"><span>Python</span><span>SQL</span><span>Power BI</span></div>
             <div class="project-links">
               <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
               <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -279,63 +383,29 @@
 
         <div class="project-card glass-card reveal">
           <div class="project-img">
-            <div class="project-img-placeholder pi-2">
-              <i class="fas fa-plane"></i>
-            </div>
-            <div class="project-overlay">
-              <span>View Details</span>
-            </div>
+            <div class="project-img-placeholder pi-3"><i class="fas fa-brain"></i></div>
+            <div class="project-overlay"><span>View Details</span></div>
           </div>
           <div class="project-body">
-            <h3>Flight Reservation System</h3>
-            <p>A comprehensive flight booking system built with OOP principles, supporting seat selection, reservations, and cancellations.</p>
-            <div class="project-tech">
-              <span>C++</span><span>OOP</span>
-            </div>
+            <div class="project-meta"><span class="proj-domain">Machine Learning</span><span class="proj-year">2026</span></div>
+            <h3>Credit Card Fraud Detection</h3>
+            <p>Full-stack fraud detection web app analyzing 284,807 real transactions using Random Forest. Achieves 99.96% accuracy &amp; 0.97 ROC-AUC. Features real-time fraud prediction with confidence scoring, PCA-based transaction analysis, Simple &amp; Advanced prediction modes, and a modern dark-themed UI.</p>
+            <p class="proj-role"><i class="fas fa-user-cog"></i> Solo Developer</p>
+            <div class="project-tech"><span>Python</span><span>Flask</span><span>React.js</span><span>scikit-learn</span><span>Random Forest</span><span>Kaggle</span></div>
             <div class="project-links">
-              <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
-        </div>
+              <a href="http://localhost:3000" target="_blank" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
 
         <div class="project-card glass-card reveal">
           <div class="project-img">
-            <div class="project-img-placeholder pi-3">
-              <i class="fas fa-dumbbell"></i>
-            </div>
-            <div class="project-overlay">
-              <span>View Details</span>
-            </div>
+            <div class="project-img-placeholder pi-2"><i class="fas fa-book"></i></div>
+            <div class="project-overlay"><span>View Details</span></div>
           </div>
           <div class="project-body">
-            <h3>Fitness Tracking System</h3>
-            <p>A feature-rich fitness tracker leveraging C++ STL for managing workout logs, progress tracking, and health metrics.</p>
-            <div class="project-tech">
-              <span>C++</span><span>STL</span><span>OOP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card glass-card reveal">
-          <div class="project-img">
-            <div class="project-img-placeholder pi-4">
-              <i class="fas fa-book"></i>
-            </div>
-            <div class="project-overlay">
-              <span>View Details</span>
-            </div>
-          </div>
-          <div class="project-body">
+            <div class="project-meta"><span class="proj-domain">Systems Programming</span><span class="proj-year">2024</span></div>
             <h3>Library Management System</h3>
             <p>An automated library system for managing book inventory, member records, borrowing history, and fine calculations.</p>
-            <div class="project-tech">
-              <span>C++</span><span>OOP</span>
-            </div>
+            <p class="proj-role"><i class="fas fa-user-cog"></i> Developer</p>
+            <div class="project-tech"><span>C++</span><span>OOP</span></div>
             <div class="project-links">
               <a href="https://github.com/Tarika25" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
               <a href="#" class="btn-sm btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -354,39 +424,40 @@
       <div class="cert-grid">
 
         <div class="cert-card glass-card reveal">
-          <div class="cert-icon nptel"><i class="fas fa-trophy"></i></div>
+          <div class="cert-icon nptel"><i class="fas fa-graduation-cap"></i></div>
           <div class="cert-body">
-            <span class="cert-badge top">Top 1%</span>
-            <h3>NPTEL Design Thinking</h3>
-            <p>Elite Certification — Ranked in the top 1% nationally among all participants.</p>
-            <span class="cert-issuer">NPTEL – IIT</span>
+            <h3>Python for Data Science Pro</h3>
+            <p>Comprehensive Python programming for data science, analytics, and machine learning workflows.</p>
+            <div class="cert-footer"><span class="cert-issuer">Udemy</span><span class="cert-year">2025</span></div>
           </div>
         </div>
 
         <div class="cert-card glass-card reveal">
-          <div class="cert-icon aws"><i class="fab fa-aws"></i></div>
+          <div class="cert-icon aws"><i class="fas fa-code"></i></div>
           <div class="cert-body">
-            <h3>AWS Certifications</h3>
-            <p>Certified in AWS cloud fundamentals, architecture, and services for scalable cloud solutions.</p>
-            <span class="cert-issuer">Amazon Web Services</span>
+            <h3>DSA using C &amp; C++</h3>
+            <p>Mastering Data Structures and Algorithms using C and C++ with advanced problem-solving techniques.</p>
+            <div class="cert-footer"><span class="cert-issuer">Udemy</span><span class="cert-year">2025</span></div>
           </div>
         </div>
 
         <div class="cert-card glass-card reveal">
-          <div class="cert-icon intern"><i class="fas fa-id-badge"></i></div>
+          <div class="cert-icon intern"><i class="fas fa-trophy"></i></div>
           <div class="cert-body">
-            <h3>Internship Certifications</h3>
-            <p>Completion certificate for Data Engineering & Generative AI internship with demonstrated skills.</p>
-            <span class="cert-issuer">Tech Organisation</span>
+            <span class="cert-badge">NPTEL</span>
+            <h3>Data Science Certification</h3>
+            <p>Certified in Data Science covering statistical analysis, ML fundamentals, and data-driven decision making.</p>
+            <div class="cert-footer"><span class="cert-issuer">NPTEL</span><span class="cert-year">2025</span></div>
           </div>
         </div>
 
         <div class="cert-card glass-card reveal">
-          <div class="cert-icon tech"><i class="fas fa-certificate"></i></div>
+          <div class="cert-icon tech"><i class="fab fa-microsoft"></i></div>
           <div class="cert-body">
-            <h3>Technical Certifications</h3>
-            <p>Multiple certifications in Machine Learning, Python, SQL, and Data Science from leading platforms.</p>
-            <span class="cert-issuer">Various Platforms</span>
+            <span class="cert-badge">IIT Bombay</span>
+            <h3>C &amp; C++ Programming</h3>
+            <p>Certified in C and C++ programming covering core concepts, OOP, memory management, and STL.</p>
+            <div class="cert-footer"><span class="cert-issuer">IIT Bombay</span><span class="cert-year">2024</span></div>
           </div>
         </div>
 
@@ -394,6 +465,7 @@
     </div>
   </section>
 
+ 
   <!-- ACHIEVEMENTS -->
   <section id="achievements" class="section">
     <div class="container">
@@ -401,27 +473,31 @@
       <div class="achievements-grid">
 
         <div class="achievement-card reveal">
-          <div class="ach-icon"><i class="fas fa-medal"></i></div>
-          <h3>NPTEL Top 1% Rank</h3>
-          <p>Achieved Elite status with a national top 1% rank in NPTEL Design Thinking certification.</p>
+          <div class="ach-icon"><i class="fas fa-trophy"></i></div>
+          <span class="ach-year">2026</span>
+          <h3>Finalist – Protothon</h3>
+          <p>Participated in the national level hackathon conducted by Prince College, Chennai and reached the finals.</p>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon"><i class="fas fa-globe"></i></div>
+          <span class="ach-year">2025</span>
+          <h3>Google Solution Challenge</h3>
+          <p>Created a better solution and submitted it in the international Google Solution Challenge 2025.</p>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon"><i class="fas fa-bolt"></i></div>
+          <span class="ach-year">2025</span>
+          <h3>Finalist – Technova</h3>
+          <p>Entered the finals of a 24-hour hackathon conducted at CIT, Coimbatore.</p>
         </div>
 
         <div class="achievement-card reveal">
           <div class="ach-icon"><i class="fas fa-briefcase"></i></div>
-          <h3>Internship Completions</h3>
-          <p>Successfully completed 2 internships — Data Engineering &amp; GenAI with Cloud, and MERN Stack Development.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-          <div class="ach-icon"><i class="fas fa-users"></i></div>
-          <h3>Technical Events</h3>
-          <p>Active participant in technical symposiums, workshops, and college-level tech events.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-          <div class="ach-icon"><i class="fas fa-code-branch"></i></div>
-          <h3>Hackathon Participation</h3>
-          <p>Participated in hackathons, collaborating on innovative AI and data-driven solutions under pressure.</p>
+          <span class="ach-year">2025</span>
+          <h3>2 Internship Completions</h3>
+          <p>Successfully completed Data Engineering &amp; GenAI with Cloud and MERN Stack Development internships.</p>
         </div>
 
       </div>
